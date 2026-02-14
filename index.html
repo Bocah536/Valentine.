@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="id" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pesan untuk Kakak 👑</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&amp;family=Quicksand:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <style>
+    .font-romantic { font-family: 'Dancing Script', cursive; }
+    .font-body { font-family: 'Quicksand', sans-serif; }
+    
+    /* Floating Hearts Background */
+    .heart {
+      position: absolute;
+      font-size: 20px;
+      animation: float 6s ease-in-out infinite;
+      opacity: 0.6;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
+      50% { transform: translateY(-30px) rotate(10deg); opacity: 1; }
+    }
+    
+    /* Button Hover Effects */
+    .btn-valentine {
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
+    }
+    .btn-valentine:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 8px 25px rgba(236, 72, 153, 0.5);
+    }
+    
+    /* Letter Animation */
+    .letter-overlay {
+      backdrop-filter: blur(10px);
+    }
+    
+    .letter-content {
+      animation: letterOpen 0.6s ease-out;
+    }
+    
+    @keyframes letterOpen {
+      0% { transform: scale(0.5) rotateX(90deg); opacity: 0; }
+      100% { transform: scale(1) rotateX(0deg); opacity: 1; }
+    }
+    
+    /* Bear Animation Scene */
+    .bear-scene {
+      animation: sceneAppear 0.8s ease-out;
+    }
+    
+    @keyframes sceneAppear {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    
+    .bear-male {
+      animation: bearWalk 2s ease-in-out forwards;
+    }
+    
+    @keyframes bearWalk {
+      0% { transform: translateX(-100px); opacity: 0; }
+      50% { transform: translateX(0); opacity: 1; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+    
+    .bear-female {
+      animation: bearAppear 1s ease-out 0.5s forwards;
+      opacity: 0;
+    }
+    
+    @keyframes bearAppear {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    
+    .gift-flower {
+      animation: giftGive 1.5s ease-in-out 1.5s forwards;
+      opacity: 0;
+    }
+    
+    @keyframes giftGive {
+      0% { transform: translateY(-20px) rotate(-10deg); opacity: 0; }
+      50% { transform: translateY(0) rotate(5deg); opacity: 1; }
+      100% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    }
+    
+    .gift-chocolate {
+      animation: chocolateGive 1.5s ease-in-out 2s forwards;
+      opacity: 0;
+    }
+    
+    @keyframes chocolateGive {
+      0% { transform: translateY(-20px) scale(0.5); opacity: 0; }
+      100% { transform: translateY(0) scale(1); opacity: 1; }
+    }
+    
+    .hearts-burst {
+      animation: heartsBurst 2s ease-out 2.5s forwards;
+      opacity: 0;
+    }
+    
+    @keyframes heartsBurst {
+      0% { transform: scale(0); opacity: 0; }
+      50% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    
+    .sparkle {
+      animation: sparkle 1.5s ease-in-out infinite;
+    }
+    
+    @keyframes sparkle {
+      0%, 100% { opacity: 0.3; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full font-body">
+  <div id="app-container" class="h-full w-full overflow-auto relative" style="background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 50%, #fbcfe8 100%);"><!-- Floating Hearts Background -->
+   <div class="absolute inset-0 overflow-hidden pointer-events-none"><span class="heart" style="left: 5%; top: 10%; animation-delay: 0s;">💕</span> <span class="heart" style="left: 15%; top: 60%; animation-delay: 1s;">👑</span> <span class="heart" style="left: 25%; top: 30%; animation-delay: 2s;">💕</span> <span class="heart" style="left: 70%; top: 15%; animation-delay: 0.5s;">👑</span> <span class="heart" style="left: 80%; top: 50%; animation-delay: 1.5s;">💕</span> <span class="heart" style="left: 90%; top: 80%; animation-delay: 2.5s;">👑</span> <span class="heart" style="left: 50%; top: 85%; animation-delay: 3s;">💕</span> <span class="heart" style="left: 35%; top: 75%; animation-delay: 0.8s;">👑</span>
+   </div><!-- Main Content -->
+   <main class="relative z-10 flex flex-col items-center justify-center min-h-full px-4 py-8"><!-- Title Section -->
+    <div class="text-center mb-8">
+     <h1 id="main-title" class="font-romantic text-5xl md:text-7xl mb-4" style="color: #be185d; text-shadow: 2px 2px 4px rgba(190, 24, 93, 0.2);">Untuk Kakak Cantik</h1>
+     <p id="recipient-display" class="text-2xl md:text-3xl font-romantic" style="color: #db2777;">Dari: Adikmu 🫂</p>
+    </div><!-- Heart Decoration -->
+    <div class="mb-8">
+     <svg width="80" height="80" viewbox="0 0 100 100" class="animate-pulse"><defs>
+       <lineargradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#ec4899" />
+        <stop offset="100%" style="stop-color:#be185d" />
+       </lineargradient>
+      </defs> <path d="M50 88 C20 60 5 40 15 25 C25 10 45 15 50 30 C55 15 75 10 85 25 C95 40 80 60 50 88Z" fill="url(#heartGradient)" stroke="#be185d" stroke-width="2" />
+     </svg>
+    </div><!-- Buttons Section -->
+    <div class="flex flex-col sm:flex-row gap-6 mb-8"><!-- Letter Button --> <button id="btn-letter" class="btn-valentine px-8 py-4 rounded-full text-white font-semibold text-lg flex items-center gap-3" style="background: linear-gradient(135deg, #ec4899 0%, #be185d 100%);">
+      <svg width="28" height="28" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2" /> <path d="M22 6L12 13L2 6" />
+      </svg> Buka Surat dari Adik 💌 </button> <!-- Bear Animation Button --> <button id="btn-bear" class="btn-valentine px-8 py-4 rounded-full text-white font-semibold text-lg flex items-center gap-3" style="background: linear-gradient(135deg, #f472b6 0%, #db2777 100%);"> <span class="text-2xl">✨</span> Lihat Animasi Cantik 👑 </button>
+    </div><!-- Sender Info -->
+    <p id="sender-display" class="text-lg font-romantic" style="color: #9d174d;">Selamanya adikmu, Aku 💋</p>
+   </main><!-- Letter Overlay -->
+   <div id="letter-overlay" class="fixed inset-0 z-50 hidden items-center justify-center p-4 letter-overlay" style="background: rgba(0, 0, 0, 0.5);">
+    <div class="letter-content max-w-2xl w-full rounded-3xl relative overflow-hidden" style="background: linear-gradient(135deg, #fff5fa 0%, #ffe8f3 50%, #ffd9ed 100%); box-shadow: 0 40px 80px rgba(190, 24, 93, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.6); border: 2px solid rgba(190, 24, 93, 0.1);"><!-- Decorative Top Border -->
+     <div class="absolute top-0 left-0 right-0 h-1" style="background: linear-gradient(90deg, transparent, #db2777, transparent);"></div><!-- Close Button --> <button id="close-letter" class="absolute top-6 right-6 w-12 h-12 rounded-full flex items-center justify-center transition-all hover:scale-110 z-10 text-2xl" style="background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%); color: #be185d; box-shadow: 0 4px 12px rgba(190, 24, 93, 0.2);"> ✕ </button> <!-- Letter Content -->
+     <div class="px-8 md:px-12 py-10 md:py-12"><!-- Top Decoration -->
+      <div class="text-center mb-6">
+       <div class="inline-block"><span class="text-5xl block mb-2">💌</span>
+        <div class="flex justify-center gap-3"><span class="text-xl sparkle">✨</span> <span class="text-2xl">👑</span> <span class="text-xl sparkle">✨</span>
+        </div>
+       </div>
+      </div><!-- Title -->
+      <h2 class="font-romantic text-center text-5xl mb-2" style="color: #be185d; text-shadow: 2px 2px 4px rgba(190, 24, 93, 0.1);">Surat dari Adik</h2>
+      <div class="text-center mb-8">
+       <div class="w-20 h-1 mx-auto" style="background: linear-gradient(90deg, transparent, #db2777, transparent);"></div>
+      </div><!-- Letter Content with Better Formatting -->
+      <div class="space-y-5 mb-8" style="color: #7c1645;"><!-- Opening -->
+       <p id="letter-recipient" class="font-romantic text-3xl text-center" style="color: #db2777; margin-bottom: 8px;">Untuk Kakak Tercinta,</p><!-- Main Message - Shortest -->
+       <div class="space-y-3 text-lg leading-7">
+        <p id="letter-message">Kakak adalah contoh terbaik buatku. Terima kasih sudah selalu ada, mendampingi, dan membuat hidupku lebih bermakna dengan kasih sayangmu.</p>
+        <p>Kamu cantik, imut, dan luar biasa. Aku bangga memiliki kakak sepertamu.</p>
+        <p>Dengan sepenuh hati,</p>
+       </div><!-- Signature -->
+       <div class="text-center pt-4">
+        <p id="letter-sender" class="font-romantic text-3xl" style="color: #db2777; margin-bottom: 4px;">~ Adikmu 💋</p>
+        <p class="text-sm" style="color: #c1344a;">Selamanya untukmu</p>
+       </div>
+      </div><!-- Decorative Bottom with Hearts -->
+      <div class="flex justify-center gap-4 mb-2"><span class="text-2xl animate-pulse">👑</span> <span class="text-3xl animate-pulse" style="animation-delay: 0.2s;">💕</span> <span class="text-2xl animate-pulse" style="animation-delay: 0.4s;">👑</span>
+      </div><!-- Decorative Line -->
+      <div class="text-center text-2xl mb-4">
+       ✦
+      </div><!-- Bottom Decoration -->
+      <div class="text-center space-y-1">
+       <div class="text-xl">
+        💕 👑 💝 👑 💕
+       </div>
+       <p class="font-romantic text-xs" style="color: #c1344a; letter-spacing: 2px;">Kakak Tercinta</p>
+      </div>
+     </div><!-- Decorative Bottom Border -->
+     <div class="absolute bottom-0 left-0 right-0 h-1" style="background: linear-gradient(90deg, transparent, #db2777, transparent);"></div>
+    </div>
+   </div><!-- Bear Animation Overlay -->
+   <div id="bear-overlay" class="fixed inset-0 z-50 hidden items-center justify-center p-4" style="background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);">
+    <div class="bear-scene max-w-2xl w-full text-center"><!-- Close Button --> <button id="close-bear" class="absolute top-4 right-4 w-12 h-12 rounded-full flex items-center justify-center transition-all hover:scale-110 z-10" style="background: #fce7f3; color: #be185d; font-size: 24px;"> ✕ </button> <!-- Scene Title -->
+     <h2 class="font-romantic text-4xl md:text-5xl mb-8" style="color: #be185d;">Kasih Sayang Kakak-Adik 👑💕✨</h2><!-- Bear Scene -->
+     <div class="relative h-80 md:h-96 rounded-3xl overflow-hidden" style="background: linear-gradient(180deg, #fdf4ff 0%, #fae8ff 50%, #f5d0fe 100%);"><!-- Ground -->
+      <div class="absolute bottom-0 left-0 right-0 h-20" style="background: linear-gradient(180deg, #86efac 0%, #4ade80 100%); border-radius: 100% 100% 0 0;"></div><!-- Flowers on Ground -->
+      <div class="absolute bottom-16 left-10 text-3xl">
+       🌸
+      </div>
+      <div class="absolute bottom-14 left-24 text-2xl">
+       🌷
+      </div>
+      <div class="absolute bottom-16 right-10 text-3xl">
+       🌺
+      </div>
+      <div class="absolute bottom-14 right-24 text-2xl">
+       🌻
+      </div><!-- Sun -->
+      <div class="absolute top-4 right-8 text-5xl sparkle">
+       ☀️
+      </div><!-- Clouds -->
+      <div class="absolute top-6 left-8 text-4xl opacity-80">
+       ☁️
+      </div>
+      <div class="absolute top-12 left-32 text-3xl opacity-60">
+       ☁️
+      </div><!-- Adik Bear -->
+      <div class="bear-male absolute bottom-20 left-1/4 transform -translate-x-1/2"><!-- Bear Body -->
+       <svg width="120" height="140" viewbox="0 0 120 140"><!-- Ears --> <circle cx="25" cy="25" r="18" fill="#8B4513" /> <circle cx="25" cy="25" r="10" fill="#D2691E" /> <circle cx="95" cy="25" r="18" fill="#8B4513" /> <circle cx="95" cy="25" r="10" fill="#D2691E" /> <!-- Head --> <circle cx="60" cy="45" r="40" fill="#8B4513" /> <!-- Face --> <ellipse cx="60" cy="55" rx="25" ry="20" fill="#D2691E" /> <!-- Eyes --> <circle cx="45" cy="40" r="6" fill="#2d1810" /> <circle cx="75" cy="40" r="6" fill="#2d1810" /> <circle cx="47" cy="38" r="2" fill="white" /> <circle cx="77" cy="38" r="2" fill="white" /> <!-- Nose --> <ellipse cx="60" cy="52" rx="8" ry="6" fill="#2d1810" /> <ellipse cx="60" cy="50" rx="3" ry="2" fill="#4a3728" /> <!-- Warm Smile --> <path d="M50 62 Q60 72 70 62" stroke="#2d1810" stroke-width="3" fill="none" stroke-linecap="round" /> <!-- Blush --> <circle cx="35" cy="55" r="6" fill="#ffb6c1" opacity="0.6" /> <circle cx="85" cy="55" r="6" fill="#ffb6c1" opacity="0.6" /> <!-- Body --> <ellipse cx="60" cy="110" rx="35" ry="30" fill="#8B4513" /> <!-- Belly --> <ellipse cx="60" cy="110" rx="22" ry="20" fill="#D2691E" /> <!-- Sweater --> <ellipse cx="60" cy="100" rx="32" ry="15" fill="#4169E1" opacity="0.8" />
+       </svg><!-- Flower Bouquet -->
+       <div class="gift-flower absolute -top-2 -right-8 text-4xl transform rotate-12">
+        💐
+       </div>
+      </div><!-- Kakak Bear (Pretty & Cute) -->
+      <div class="bear-female absolute bottom-20 right-1/4 transform translate-x-1/2">
+       <svg width="120" height="140" viewbox="0 0 120 140"><!-- Ears --> <circle cx="25" cy="25" r="18" fill="#A0522D" /> <circle cx="25" cy="25" r="10" fill="#DEB887" /> <circle cx="95" cy="25" r="18" fill="#A0522D" /> <circle cx="95" cy="25" r="10" fill="#DEB887" /> <!-- Head --> <circle cx="60" cy="45" r="40" fill="#A0522D" /> <!-- Long Hair --> <ellipse cx="60" cy="20" rx="45" ry="25" fill="#ff69b4" /> <path d="M20 50 Q15 70 25 95" fill="#ff69b4" /> <path d="M100 50 Q105 70 95 95" fill="#ff69b4" /> <circle cx="80" cy="25" r="8" fill="#ff1493" /> <circle cx="40" cy="25" r="8" fill="#ff1493" /> <!-- Face --> <ellipse cx="60" cy="55" rx="25" ry="20" fill="#DEB887" /> <!-- Beautiful Eyes --> <circle cx="45" cy="40" r="7" fill="#2d1810" /> <circle cx="75" cy="40" r="7" fill="#2d1810" /> <circle cx="47" cy="38" r="3" fill="white" /> <circle cx="77" cy="38" r="3" fill="white" /> <!-- Long Eyelashes --> <path d="M38 35 L35 28" stroke="#2d1810" stroke-width="2" /> <path d="M45 33 L45 25" stroke="#2d1810" stroke-width="2" /> <path d="M52 35 L55 28" stroke="#2d1810" stroke-width="2" /> <path d="M68 35 L65 28" stroke="#2d1810" stroke-width="2" /> <path d="M75 33 L75 25" stroke="#2d1810" stroke-width="2" /> <path d="M82 35 L85 28" stroke="#2d1810" stroke-width="2" /> <!-- Nose --> <ellipse cx="60" cy="52" rx="6" ry="4" fill="#2d1810" /> <ellipse cx="60" cy="50" rx="2" ry="1" fill="#4a3728" /> <!-- Cute Smile --> <path d="M48 62 Q60 72 72 62" stroke="#2d1810" stroke-width="3" fill="none" stroke-linecap="round" /> <!-- Cute Blush --> <circle cx="35" cy="55" r="9" fill="#ffb6c1" opacity="0.8" /> <circle cx="85" cy="55" r="9" fill="#ffb6c1" opacity="0.8" /> <!-- Body --> <ellipse cx="60" cy="110" rx="35" ry="30" fill="#A0522D" /> <!-- Elegant Dress --> <ellipse cx="60" cy="115" rx="32" ry="28" fill="#ff69b4" /> <path d="M45 115 Q45 140 55 140" fill="#ff1493" /> <path d="M75 115 Q75 140 65 140" fill="#ff1493" /> <!-- Dress Flowers --> <circle cx="50" cy="120" r="3" fill="white" /> <circle cx="60" cy="125" r="3" fill="white" /> <circle cx="70" cy="120" r="3" fill="white" /> <circle cx="55" cy="130" r="2" fill="gold" /> <circle cx="65" cy="130" r="2" fill="gold" />
+       </svg><!-- Crown on head indicator -->
+       <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 text-2xl">
+        👑
+       </div><!-- Chocolate Box Gift -->
+       <div class="gift-chocolate absolute top-12 -left-10 text-3xl">
+        💎
+       </div>
+      </div><!-- Love Hearts Burst -->
+      <div class="hearts-burst absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+       <div class="relative"><span class="absolute -top-8 -left-12 text-3xl animate-bounce">💕</span> <span class="absolute -top-12 left-0 text-4xl animate-bounce" style="animation-delay: 0.1s;">👑</span> <span class="absolute -top-8 left-12 text-3xl animate-bounce" style="animation-delay: 0.2s;">💕</span> <span class="absolute -top-4 -left-8 text-2xl animate-bounce" style="animation-delay: 0.3s;">✨</span> <span class="absolute -top-4 left-8 text-2xl animate-bounce" style="animation-delay: 0.4s;">💕</span>
+       </div>
+      </div><!-- Sparkles -->
+      <div class="absolute top-20 left-20 text-2xl sparkle">
+       ✨
+      </div>
+      <div class="absolute top-16 right-20 text-xl sparkle" style="animation-delay: 0.5s;">
+       ✨
+      </div>
+      <div class="absolute top-32 left-16 text-lg sparkle" style="animation-delay: 1s;">
+       ✨
+      </div>
+      <div class="absolute top-28 right-16 text-2xl sparkle" style="animation-delay: 1.5s;">
+       ✨
+      </div>
+     </div><!-- Message Below Scene -->
+     <p class="font-romantic text-2xl md:text-3xl mt-6" style="color: #be185d;">"Kakak cantik imut, selamanya aku sayang kamu" 💕</p><!-- Replay Button --> <button id="replay-bear" class="mt-6 px-6 py-3 rounded-full text-white font-semibold transition-all hover:scale-105" style="background: linear-gradient(135deg, #ec4899 0%, #be185d 100%);"> 🔄 Putar Ulang Animasi </button>
+    </div>
+   </div>
+  </div>
+  <script>
+    const defaultConfig = {
+      recipient_name: "Kakak",
+      sender_name: "Adik",
+      love_message: "Kakak adalah contoh terbaik buatku. Terima kasih sudah selalu ada, mendampingi, dan membuat hidupku lebih bermakna dengan kasih sayangmu.",
+      background_color: "#fdf2f8",
+      primary_color: "#be185d",
+      secondary_color: "#db2777",
+      text_color: "#831843",
+      accent_color: "#ec4899"
+    };
+
+    // DOM Elements
+    const letterOverlay = document.getElementById('letter-overlay');
+    const bearOverlay = document.getElementById('bear-overlay');
+    const btnLetter = document.getElementById('btn-letter');
+    const btnBear = document.getElementById('btn-bear');
+    const closeLetter = document.getElementById('close-letter');
+    const closeBear = document.getElementById('close-bear');
+    const replayBear = document.getElementById('replay-bear');
+
+    // Open Letter
+    btnLetter.addEventListener('click', () => {
+      letterOverlay.classList.remove('hidden');
+      letterOverlay.classList.add('flex');
+    });
+
+    // Close Letter
+    closeLetter.addEventListener('click', () => {
+      letterOverlay.classList.add('hidden');
+      letterOverlay.classList.remove('flex');
+    });
+
+    // Open Bear Animation
+    btnBear.addEventListener('click', () => {
+      bearOverlay.classList.remove('hidden');
+      bearOverlay.classList.add('flex');
+      restartAnimations();
+    });
+
+    // Close Bear Animation
+    closeBear.addEventListener('click', () => {
+      bearOverlay.classList.add('hidden');
+      bearOverlay.classList.remove('flex');
+    });
+
+    // Replay Animation
+    replayBear.addEventListener('click', restartAnimations);
+
+    function restartAnimations() {
+      const bearScene = document.querySelector('.bear-scene');
+      const maleBear = document.querySelector('.bear-male');
+      const femaleBear = document.querySelector('.bear-female');
+      const flower = document.querySelector('.gift-flower');
+      const chocolate = document.querySelector('.gift-chocolate');
+      const hearts = document.querySelector('.hearts-burst');
+      
+      // Remove and re-add classes to restart animations
+      [bearScene, maleBear, femaleBear, flower, chocolate, hearts].forEach(el => {
+        if (el) {
+          const classes = el.className;
+          el.className = '';
+          void el.offsetWidth; // Trigger reflow
+          el.className = classes;
+        }
+      });
+    }
+
+    // Close overlays when clicking outside content
+    letterOverlay.addEventListener('click', (e) => {
+      if (e.target === letterOverlay) {
+        letterOverlay.classList.add('hidden');
+        letterOverlay.classList.remove('flex');
+      }
+    });
+
+    bearOverlay.addEventListener('click', (e) => {
+      if (e.target === bearOverlay) {
+        bearOverlay.classList.add('hidden');
+        bearOverlay.classList.remove('flex');
+      }
+    });
+
+    // Element SDK Integration
+    async function onConfigChange(config) {
+      const recipientName = config.recipient_name || defaultConfig.recipient_name;
+      const senderName = config.sender_name || defaultConfig.sender_name;
+      const loveMessage = config.love_message || defaultConfig.love_message;
+      const bgColor = config.background_color || defaultConfig.background_color;
+      const primaryColor = config.primary_color || defaultConfig.primary_color;
+      const secondaryColor = config.secondary_color || defaultConfig.secondary_color;
+      const textColor = config.text_color || defaultConfig.text_color;
+      const accentColor = config.accent_color || defaultConfig.accent_color;
+
+      // Update text content
+      document.getElementById('recipient-display').textContent = `Dari: ${senderName} 🫂`;
+      document.getElementById('sender-display').textContent = `Selamanya ${senderName}, ${recipientName} 💋`;
+      document.getElementById('letter-recipient').textContent = `Untuk ${recipientName} Tercinta,`;
+      document.getElementById('letter-message').textContent = loveMessage;
+      document.getElementById('letter-sender').textContent = `~ ${senderName} 💋`;
+
+      // Update colors
+      document.getElementById('app-container').style.background = `linear-gradient(135deg, ${bgColor} 0%, ${adjustColor(bgColor, -10)} 50%, ${adjustColor(bgColor, -20)} 100%)`;
+      document.getElementById('main-title').style.color = primaryColor;
+      document.getElementById('recipient-display').style.color = secondaryColor;
+      document.getElementById('sender-display').style.color = textColor;
+      
+      btnLetter.style.background = `linear-gradient(135deg, ${accentColor} 0%, ${primaryColor} 100%)`;
+      btnBear.style.background = `linear-gradient(135deg, ${adjustColor(accentColor, 20)} 0%, ${secondaryColor} 100%)`;
+    }
+
+    function adjustColor(hex, percent) {
+      const num = parseInt(hex.replace('#', ''), 16);
+      const amt = Math.round(2.55 * percent);
+      const R = Math.max(0, Math.min(255, (num >> 16) + amt));
+      const G = Math.max(0, Math.min(255, ((num >> 8) & 0x00FF) + amt));
+      const B = Math.max(0, Math.min(255, (num & 0x0000FF) + amt));
+      return '#' + (0x1000000 + R * 0x10000 + G * 0x100 + B).toString(16).slice(1);
+    }
+
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [
+          {
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (value) => { config.background_color = value; window.elementSdk.setConfig({ background_color: value }); }
+          },
+          {
+            get: () => config.primary_color || defaultConfig.primary_color,
+            set: (value) => { config.primary_color = value; window.elementSdk.setConfig({ primary_color: value }); }
+          },
+          {
+            get: () => config.secondary_color || defaultConfig.secondary_color,
+            set: (value) => { config.secondary_color = value; window.elementSdk.setConfig({ secondary_color: value }); }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (value) => { config.text_color = value; window.elementSdk.setConfig({ text_color: value }); }
+          },
+          {
+            get: () => config.accent_color || defaultConfig.accent_color,
+            set: (value) => { config.accent_color = value; window.elementSdk.setConfig({ accent_color: value }); }
+          }
+        ],
+        borderables: [],
+        fontEditable: undefined,
+        fontSizeable: undefined
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ["recipient_name", config.recipient_name || defaultConfig.recipient_name],
+        ["sender_name", config.sender_name || defaultConfig.sender_name],
+        ["love_message", config.love_message || defaultConfig.love_message]
+      ]);
+    }
+
+    // Initialize SDK
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9cddbb10e6609fcd',t:'MTc3MTA4NDMyNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
